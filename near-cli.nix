@@ -19,7 +19,7 @@ mkYarnPackage rec {
     xcbuild
   ];
 
-  buildInputs = [
+  extraBuildInputs = [
     libusb
   ] ++ lib.optionals stdenv.isLinux [
     udev
@@ -29,14 +29,6 @@ mkYarnPackage rec {
     IOKit
   ];
 
-  frameworkFlags = lib.optionalString stdenv.isDarwin (toString [
-    "-F${AppKit}/Library/Frameworks"
-    "-F${CoreFoundation}/Library/Frameworks"
-    "-F${IOKit}/Library/Frameworks"
-  ]);
-
-  NIX_CFLAGS_COMPILE = frameworkFlags;
-  NIX_LDFLAGS = frameworkFlags;
   dontStrip = true; # takes way too much time
 
   buildPhase = ''
