@@ -1,4 +1,17 @@
-{ stdenv, lib, mkYarnPackage, fetchFromGitHub, python39Packages, nodePackages, pkg-config, xcbuild, libusb, udev, AppKit, CoreFoundation, IOKit }:
+{ stdenv
+, lib
+, fetchFromGitHub
+, mkYarnPackage
+, nodePackages
+, pkg-config
+, python39Packages
+, xcbuild
+, libusb
+, udev
+, AppKit
+, CoreFoundation
+, IOKit
+}:
 
 mkYarnPackage rec {
   pname = "near-cli";
