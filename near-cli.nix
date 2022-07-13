@@ -15,13 +15,13 @@
 
 mkYarnPackage rec {
   pname = "near-cli";
-  version = "3.2.0";
+  version = "3.4.0";
 
   src = fetchFromGitHub {
     owner = "near";
     repo = "near-cli";
     rev = "v${version}";
-    sha256 = "sha256-GMgUD2QtMR3W0H2qERg7jvnAot74xmcGQt5WnFURkUM=";
+    sha256 = "sha256-ektEEmODHXerHFRRERYqoyt2TUMw8vA3ybQmpO/mbfo=";
   };
 
   nativeBuildInputs = [
